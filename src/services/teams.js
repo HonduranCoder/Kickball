@@ -13,3 +13,29 @@ export async function getTeamById(id) {
     .single();
   return parseData(request);
 }
+
+export async function updateTeamById(id, { name, city, state }) {
+  const request = await client
+    .from('teams')
+    .update({ name, city, state })
+    .match({ id });
+  return parseData(request);
+}
+
+export async function updatePlayerById(id, { name, position, team_id }) {
+  const request = await client
+    .from('players')
+    .update({ name, position, team_id })
+    .match({ id });
+  return parseData(request);
+}
+
+export async function createTeam({ name, city, state }) {
+  const request = await client.from('teams').insert({ name, city, state });
+  return parseData(request);
+}
+
+export async function deleteTeamById(id) {
+  const request = await client.from('teams').delete().match({ id });
+  return parseData(request);
+}

@@ -13,6 +13,7 @@ function TeamList({ teams }) {
               <Link to={`/teams/${team.id}`} className="App-link">
                 {team.name}
               </Link>
+              <Link to={`/teams/update/${team.id}`}>Edit A Team</Link>
             </li>
           );
         })}

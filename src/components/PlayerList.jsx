@@ -25,10 +25,19 @@ function PlayerList() {
       <ul>
         {players.map((player) => {
           return (
-            <li key={player.id}>
+            <li
+              key={player.id}
+              style={{ display: 'flex', flexDirection: 'column' }}
+            >
               <Link to={`/players/${player.id}`} className="App-link">
                 {player.name}
               </Link>
+              <button style={{ margin: '1em' }}>
+                {' '}
+                <Link to={`/players/update/${player.id}`}>
+                  Edit A Player
+                </Link>{' '}
+              </button>
             </li>
           );
         })}
