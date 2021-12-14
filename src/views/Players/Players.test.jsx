@@ -9,7 +9,7 @@ it('should render a player', async () => {
     </MemoryRouter>
   );
   screen.getByText('Wait For It', { exact: false });
-  const teams = await screen.findByText('Betty Grey');
+  const teams = await screen.findByText('NONONO');
 
   expect(teams).toBeInTheDocument();
 });
