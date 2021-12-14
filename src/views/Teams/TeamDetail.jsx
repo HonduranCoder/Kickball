@@ -10,7 +10,7 @@ export default function PlayerDetail() {
   useEffect(() => {
     getTeamById(id)
       .then((res) => setTeam(res))
-      .then(() => setLoading(false));
+      .finally(() => setLoading(false));
   }, [id]);
 
   if (loading) {
